@@ -13,17 +13,18 @@ export default defineConfig({
     minify: 'terser',
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        popup: path.resolve(__dirname, 'src/popup.tsx'),
+        expanded: path.resolve(__dirname, 'src/expanded.tsx')
+      },
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          crypto: ['tweetnacl', 'bip39'],
-          ui: [
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-tabs',
-            '@radix-ui/react-toast'
-          ]
-        }
+        entryFileNames: 'assets/[name].js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].[ext]',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
       }
     }
   },

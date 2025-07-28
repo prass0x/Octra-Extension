@@ -532,7 +532,7 @@ export function WalletDashboard({
                   variant="outline"
                   size="sm"
                   onClick={() => setShowRPCManager(true)}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 desktop-only"
                 >
                   <Wifi className="h-4 w-4" />
                   RPC
@@ -541,14 +541,14 @@ export function WalletDashboard({
                   variant="outline"
                   size="sm"
                   onClick={() => setShowDAppsManager(true)}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 desktop-only"
                 >
                   <Globe className="h-4 w-4" />
                   dApps
                 </Button>
                 <Dialog open={showAddWalletDialog} onOpenChange={setShowAddWalletDialog}>
                   <DialogTrigger asChild>
-                    <Button variant="outline" size="sm" className="flex items-center gap-2">
+                    <Button variant="outline" size="sm" className="flex items-center gap-2 desktop-only">
                       <Plus className="h-4 w-4" />
                       Add Wallet
                     </Button>
@@ -595,7 +595,7 @@ export function WalletDashboard({
                     <Button
                       variant="outline"
                       size="sm"
-                      className="text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300 flex items-center gap-2"
+                      className="text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300 flex items-center gap-2 desktop-only"
                     >
                       <Lock className="h-4 w-4" />
                       Lock Wallet
@@ -814,27 +814,27 @@ export function WalletDashboard({
       {/* Main Content */}
       <main className="octra-container py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="overview" className="flex items-center gap-2">
+          <TabsList className="grid w-full grid-cols-5 tabs-list">
+            <TabsTrigger value="overview" className="flex items-center gap-2 tabs-trigger">
               <PieChart className="h-4 w-4" />
               <span className="hidden sm:inline">Overview</span>
               {isRefreshingData && (
                 <div className="animate-spin h-3 w-3 border border-primary border-t-transparent rounded-full ml-1" />
               )}
             </TabsTrigger>
-            <TabsTrigger value="send" className="flex items-center gap-2">
+            <TabsTrigger value="send" className="flex items-center gap-2 tabs-trigger">
               <Send className="h-4 w-4" />
               <span className="hidden sm:inline">Send</span>
             </TabsTrigger>
-            <TabsTrigger value="private" className="flex items-center gap-2">
+            <TabsTrigger value="private" className="flex items-center gap-2 tabs-trigger">
               <Shield className="h-4 w-4" />
               <span className="hidden sm:inline">Private</span>
             </TabsTrigger>
-            <TabsTrigger value="claim" className="flex items-center gap-2">
+            <TabsTrigger value="claim" className="flex items-center gap-2 tabs-trigger">
               <Gift className="h-4 w-4" />
               <span className="hidden sm:inline">Claim</span>
             </TabsTrigger>
-            <TabsTrigger value="history" className="flex items-center gap-2">
+            <TabsTrigger value="history" className="flex items-center gap-2 tabs-trigger">
               <History className="h-4 w-4" />
               <span className="hidden sm:inline">History</span>
             </TabsTrigger>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Octra Wallet - Popup</title>
+    <link rel="stylesheet" href="dist/assets/index.css" />
+    <style>
+      body {
+        width: 400px;
+        height: 600px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+      }
+      /* Hide elements that don't fit in popup */
+      .popup-hidden {
+        display: none !important;
+      }
+      /* Compact header for popup */
+      .octra-header {
+        padding: 0.5rem 0 !important;
+      }
+      .octra-container {
+        padding: 0 1rem !important;
+      }
+      /* Compact tabs */
+      .popup-view .tabs-list {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+      .popup-view .tabs-trigger {
+        padding: 0.5rem 0.25rem !important;
+        font-size: 0.75rem !important;
+      }
+      .popup-view .tabs-trigger span {
+        display: none !important;
+      }
+      /* Compact cards */
+      .popup-view .card {
+        margin-bottom: 1rem !important;
+      }
+      .popup-view .card-header {
+        padding: 1rem 1rem 0.5rem !important;
+      }
+      .popup-view .card-content {
+        padding: 0.5rem 1rem 1rem !important;
+      }
+      /* Hide complex features in popup */
+      .popup-view [data-value="send"] .tabs-list {
+        display: none !important;
+      }
+      .popup-view [data-value="send"] .tabs-content[data-value="multi"],
+      .popup-view [data-value="send"] .tabs-content[data-value="file"] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="popup-view"></div>
+    <script type="module" src="dist/assets/popup.js"></script>
+  </body>
+</html>

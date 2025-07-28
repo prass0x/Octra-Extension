@@ -201,8 +201,8 @@ export function Balance({ wallet, balance, encryptedBalance: propEncryptedBalanc
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Public Balance */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 balance-overview">
+            <div className="space-y-2 balance-item">
               <div className="flex items-center gap-2">
                 <Wallet className="h-4 w-4 text-blue-500" />
                 <span className="text-sm font-medium text-muted-foreground">Public Balance</span>
@@ -222,7 +222,7 @@ export function Balance({ wallet, balance, encryptedBalance: propEncryptedBalanc
             </div>
 
             {/* Encrypted Balance */}
-            <div className="space-y-2">
+            <div className="space-y-2 balance-item">
               <div className="flex items-center gap-2">
                 <Lock className="h-4 w-4 text-yellow-500" />
                 <span className="text-sm font-medium text-muted-foreground">Private Balance</span>

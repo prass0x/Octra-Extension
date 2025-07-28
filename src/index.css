@@ -151,6 +151,103 @@
   }
 }
 
+/* Chrome Extension Popup Styles */
+.popup-view {
+  font-size: 14px;
+}
+
+.popup-view .octra-header {
+  padding: 0.5rem 0 !important;
+}
+
+.popup-view .octra-container {
+  padding: 0 0.75rem !important;
+  max-width: none !important;
+}
+
+.popup-view .card {
+  margin-bottom: 0.75rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.popup-view .card-header {
+  padding: 0.75rem 1rem 0.5rem !important;
+}
+
+.popup-view .card-content {
+  padding: 0.5rem 1rem 0.75rem !important;
+}
+
+.popup-view .tabs-list {
+  grid-template-columns: repeat(3, 1fr) !important;
+  height: 2rem !important;
+}
+
+.popup-view .tabs-trigger {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  height: auto !important;
+}
+
+.popup-view .tabs-trigger span:not(.sr-only) {
+  display: none !important;
+}
+
+.popup-view .tabs-trigger svg {
+  margin-right: 0 !important;
+}
+
+/* Hide complex features in popup */
+.popup-view [data-value="send"] .tabs-list {
+  display: none !important;
+}
+
+.popup-view [data-value="send"] .tabs-content[data-value="multi"],
+.popup-view [data-value="send"] .tabs-content[data-value="file"] {
+  display: none !important;
+}
+
+/* Compact balance display */
+.popup-view .balance-overview {
+  grid-template-columns: 1fr !important;
+  gap: 0.5rem !important;
+}
+
+.popup-view .balance-item {
+  padding: 0.5rem !important;
+}
+
+/* Hide some desktop-only elements in popup */
+.popup-view .desktop-only {
+  display: none !important;
+}
+
+/* Compact form elements */
+.popup-view .form-group {
+  margin-bottom: 0.75rem !important;
+}
+
+.popup-view .button {
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+}
+
+/* Scrollable content in popup */
+.popup-view .scrollable-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Extension specific styles */
+.expanded-view {
+  min-height: 100vh;
+}
+
+.popup-view {
+  height: 600px;
+  overflow-y: auto;
+}
+
 /* Documentation-style content styling */
 .docs-content {
   @apply max-w-none;

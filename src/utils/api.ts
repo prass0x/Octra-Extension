@@ -26,14 +26,18 @@ async function makeAPIRequest(endpoint: string, options: RequestInit = {}): Prom
     Object.assign(headers, optionsHeaders);
   }
   
-  // Determine if we're in development or production
+  // Determine if we're in development, production, or extension
   const isDevelopment = import.meta.env.DEV;
+  const isExtension = typeof chrome !== 'undefined' && chrome.runtime;
   
   const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
   
   let url: string;
   
-  if (isDevelopment) {
+  if (isExtension) {
+    // Extension: make direct requests to RPC provider
+    url = `${provider.url}${cleanEndpoint}`;
+  } else if (isDevelopment) {
     // Development: use Vite proxy
     url = `/api${cleanEndpoint}`;
     headers['X-RPC-URL'] = provider.url;
